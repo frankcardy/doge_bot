@@ -1,0 +1,29 @@
+{% extends 'dogs/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+		<div class="col-lg-4">
+      {% for item in dogs %}
+      <img src='{{ item.picture }}'>
+      {% endfor %}
+			<div class="box-element product">
+          <h6><strong>Dog</strong></h6>
+          <hr>
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+			<div class="box-element product">
+				    {% with dogs|last as last %}
+            <img src={{last.picture}} />
+            {% endwith %}
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+			<div class="box-element product">
+
+			</div>
+		</div>
+	</div>
+{% endblock content %}
